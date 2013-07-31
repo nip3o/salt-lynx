@@ -1,0 +1,6 @@
+# Enable statup
+startup=1
+
+# Avoid opening up the whole box if firewall is stopped
+SAFESTOP=1
+
