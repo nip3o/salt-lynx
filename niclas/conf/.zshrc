@@ -42,7 +42,7 @@ export GITHUB_USER=nip3o
 
 source $ZSH/oh-my-zsh.sh
 
-for x in $HOME/zsh/*; do
+for x in $HOME/.zsh/*; do
     source $x
 done
 
