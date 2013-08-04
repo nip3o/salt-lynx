@@ -15,4 +15,5 @@ FORMAT 2
 ###############################################################################
 #ZONE	INTERFACE	OPTIONS
 net     wan             dhcp,tcpflags,nosmurfs,routefilter,logmartians,sourceroute=0
-loc     lan             tcpflags,nosmurfs,routefilter,logmartians
+loc     lan             dhcp,tcpflags,nosmurfs,routefilter,logmartians
+
