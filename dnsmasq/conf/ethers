@@ -1,0 +1,4 @@
+{% for mac, hostname in pillar['network']['lan']['ethers'].items() %}
+{{ mac }} {{ hostname }}
+{% endfor %}
+

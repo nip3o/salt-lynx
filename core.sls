@@ -1,6 +1,7 @@
 include:
   - niclas
   - network
+  - dnsmasq
 
 corepkgs:
   pkg.installed:
