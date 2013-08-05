@@ -1,7 +1,10 @@
 include:
   - niclas
   - network
+  - shorewall
   - dnsmasq
+  - raid
+  - samba
 
 corepkgs:
   pkg.installed:
@@ -11,4 +14,5 @@ corepkgs:
       - zsh
       - vim-nox
       - debconf-utils
+      - build-essential
 

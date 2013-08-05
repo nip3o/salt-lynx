@@ -13,8 +13,13 @@
 ###############################################################################
 #SOURCE		DEST		POLICY		LOG LEVEL	LIMIT:BURST
 
+# Allow internet access for server and internal network
+$FW		net		ACCEPT
 loc		net		ACCEPT
+
+# Drop all traffic from net unless listed above or by shorewall-rules 
 net		all		DROP		info
+# Reject everything else (i.e. unlisted stuff from internal network)
 # THE FOLLOWING POLICY MUST BE LAST
 all		all		REJECT		info
 
