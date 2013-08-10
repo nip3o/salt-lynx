@@ -3,8 +3,10 @@ include:
   - network
   - shorewall
   - dnsmasq
+  - dyndns
   - raid
   - samba
+  - torrent
 
 corepkgs:
   pkg.installed:

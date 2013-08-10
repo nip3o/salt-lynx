@@ -31,12 +31,15 @@ SSH(ACCEPT)	net		$FW		tcp	22
 #	Allow Ping from the local network
 Ping(ACCEPT)	loc		$FW
 
+{% for rule in pillar['shorewall']['macros']  %}
+{% if rule.get('name') %}# {{ rule['name'] }}{% endif %}{% for direction in rule['directions'] %}
+{{ rule['macro'] }}({{ rule.get('action', 'ACCEPT') }})	{{ direction[0] }}		{{ direction[1] }}
+{% endfor %}{% endfor %}
 
-# Pillar-defined macros
-{% for macro, source, dest in pillar['shorewall']['accept_macros'] %}
-{{ macro }}(ACCEPT)	{{ source }}	{{ dest }}
-{% endfor %}
-
+{% for rule in pillar['shorewall']['rules']  %}
+{% if rule.get('name') %}# {{ rule['name'] }}{% endif %}{% for direction in rule['directions'] %}
+{{ rule.get('action', 'ACCEPT') }}		{{ direction[0] }}		{{ direction[1] }}		{{ rule.get('protocol', 'tcp') }}	{{ rule['ports'] }}
+{% endfor %}{% endfor %}
 
 # Drop Ping from the "bad" net zone.. and prevent your log from being flooded..
 Ping(DROP)	net		$FW
