@@ -1,0 +1,5 @@
+:DEFAULT: cnidscheme:dbd	options:usedots,upriv,tm
+
+{% for rule in pillar['fileshare']['shares']  %}
+{{ rule['path'] }}	"{{ rule['name'] }}"	{{ rule['allow'] }}{% endfor %}
+

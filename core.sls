@@ -5,7 +5,7 @@ include:
   - dnsmasq
   - dyndns
   - raid
-  - samba
+  - fileshare
   - torrent
 
 corepkgs:
