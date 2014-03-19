@@ -4,6 +4,12 @@
     - require:
       - pkg: shorewall
 
+/etc/default/shorewall-init:
+  file.managed:
+    - source: salt://shorewall/conf/shorewall-init
+    - require:
+      - pkg: shorewall
+
 /etc/shorewall/interfaces:
   file.managed:
     - source: salt://shorewall/conf/interfaces
@@ -44,7 +50,7 @@
 shorewall-service:
   service.running:
     - name: shorewall
-    - enable: True
+    - enable: False
     - require:
       - pkg: shorewall
     - watch:
@@ -59,4 +65,5 @@ shorewall-pkg:
   pkg.installed:
     - names:
       - shorewall
+      - shorewall-init
 

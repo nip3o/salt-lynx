@@ -1,0 +1,5 @@
+server {
+    root {{ pillar['web']['fileshare_path'] }};
+    server_name files.niclasolofsson.se;
+}
+

@@ -17,6 +17,7 @@ fileshare-pkg:
     - name: samba
     - name: netatalk
     - name: avahi-daemon
+    - name: nfs-kernel-server
 
 samba-service:
   service.running:

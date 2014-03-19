@@ -11,9 +11,9 @@
 #------------------------------------------------------------------------------
 # For information about entries in this file, type "man shorewall-interfaces"
 ###############################################################################
-FORMAT 2
+?FORMAT 2
 ###############################################################################
 #ZONE	INTERFACE	OPTIONS
-net     wan             dhcp,tcpflags,nosmurfs,routefilter,logmartians,sourceroute=0
+net     wan             dhcp,tcpflags,nosmurfs,routefilter,logmartians,sourceroute=0,required
 loc     lan             dhcp,tcpflags,nosmurfs,routefilter,logmartians
 

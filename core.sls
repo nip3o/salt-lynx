@@ -7,6 +7,7 @@ include:
   - raid
   - fileshare
   - torrent
+  - web
 
 corepkgs:
   pkg.installed:
