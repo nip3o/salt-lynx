@@ -4,6 +4,9 @@ niclas:
     - groups:
       - sudo
 
+autojump:
+  pkg.installed
+
 sshkeys:
   ssh_auth.present:
     - user: niclas

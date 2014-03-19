@@ -48,3 +48,5 @@ done
 
 PATH+=":$HOME/bin"
 
+. /usr/share/autojump/autojump.sh
+
