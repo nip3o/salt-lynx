@@ -1,0 +1,15 @@
+server {
+    listen 80;
+
+    root /usr/share/nginx/niclasolofsson.se;
+    index index.html;
+
+    server_name niclasolofsson.se;
+}
+
+server {
+    listen 80;
+    server_name www.niclasolofsson.se;
+    return 301 http://niclasolofsson.se$request_uri;
+}
+

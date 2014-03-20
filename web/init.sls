@@ -7,6 +7,14 @@ nginx:
     - enable: True
     - require:
       - pkg: nginx
+    - watch:
+      - file: /etc/nginx/*
+
+
+disable-default-site:
+  file.absent:
+    - name: /etc/nginx/sites-enabled/default
+
 
 uwsgi:
   pkg:
@@ -18,6 +26,8 @@ uwsgi:
     - require:
       - pkg: uwsgi
 
+
 include:
   - web.files
+  - web.niclasolofsson
 
